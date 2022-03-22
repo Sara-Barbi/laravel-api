@@ -9,7 +9,7 @@ class PostController extends Controller
 {
    //-----------post list
 
-   // public function index(){
+   public function index(){
    //     return response()->json([
    //        'name'=> 'Simone',
    //        'surname'=>'Antonelli'
@@ -18,8 +18,8 @@ class PostController extends Controller
    
    //----------COME RICHIAMO TUTTI I POST-------------
    
-   //$post= Post::all();
-   //return response()->json($posts);
+   $post= Post::all();
+   return response()->json($posts);
 
    //----------RECUPERO SECONDO ID DELLA CATEGORIA SU TUTTI I RECORD
    
@@ -27,7 +27,7 @@ class PostController extends Controller
    //$posts_filtered= Post::where("category_id",2)-get();
    //return response()->json($posts_filtered);
 
-   // }
+   }
 
    //-----------RICHIESTA DINAMICA CATEGORIA
    

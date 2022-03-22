@@ -20,7 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 //--------------------per api-------------
 
-//Route::get('/posts',"Api\PostController@index");                                 //prefisso con api lo richiamo con api/posts
+Route::get('/posts',"Api\PostController@index");                                 //prefisso con api lo richiamo con api/posts
 
 
 //---------------------per richiesta spefifica categoria 
