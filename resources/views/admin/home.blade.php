@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
-                <div class="card-body">
+                <div class="mb-5 mt-5 text-center">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
@@ -16,8 +16,8 @@
                     {{ __('You are logged in!') }}     <!--__serve per la lingua-->
                     {{ Auth::user()->name }}          <!--prendere un dato dall'user-->
                 </div>
+                <a class="text-center" href="{{route("admin.posts.index")}}"><button type="button" >Esplora!</button></a>
             </div>
-            <button><a href="{{ route('admin.posts.index') }}"></a></button>
         </div>
     </div>
 </div>
