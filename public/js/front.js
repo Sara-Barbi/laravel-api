@@ -1995,6 +1995,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Main",
   data: function data() {
@@ -2573,15 +2596,97 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c(
-      "ul",
-      _vm._l(_vm.posts, function (post, index) {
-        return _c("li", { key: index }, [
-          _vm._v("\n             " + _vm._s(post.title) + "\n        "),
-        ])
-      }),
-      0
-    ),
+    _c("div", { staticClass: "container" }, [
+      _c(
+        "div",
+        { staticClass: "row justify-content-around flex-wrap" },
+        _vm._l(_vm.posts, function (post, index) {
+          return _c(
+            "div",
+            { key: index, staticClass: "my_height col-3 text-center m-3" },
+            [
+              _c("h1", { staticClass: "mt-5 mb-4" }, [
+                _vm._v(_vm._s(post.title)),
+              ]),
+              _vm._v(" "),
+              post.category_id == 1
+                ? _c("div", { staticClass: "mb-4" }, [_vm._v("Antipasti")])
+                : _vm._e(),
+              _vm._v(" "),
+              post.category_id == 2
+                ? _c("div", { staticClass: "mb-4" }, [_vm._v("Primi")])
+                : _vm._e(),
+              _vm._v(" "),
+              post.category_id == 3
+                ? _c("div", { staticClass: "mb-4" }, [
+                    _vm._v("Secondi Piatti di Carne"),
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              post.category_id == 4
+                ? _c("div", { staticClass: "mb-4" }, [
+                    _vm._v("Secondi Piatti di Pesce"),
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              post.category_id == 5
+                ? _c("div", { staticClass: "mb-4" }, [
+                    _vm._v("Dolci al Cucchiaio"),
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              post.category_id == 6
+                ? _c("div", { staticClass: "mb-4" }, [_vm._v("Torte")])
+                : _vm._e(),
+              _vm._v(" "),
+              post.category_id == 7
+                ? _c("div", { staticClass: "mb-4" }, [
+                    _vm._v("Piatti Orientali"),
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-12 mt-5 mb-5" }, [
+                _c("img", {
+                  staticClass: "w-100 product_img",
+                  attrs: { src: post.img, alt: "" },
+                }),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-4 tags" }),
+              _vm._v(" "),
+              _c("p", [
+                _c("strong", { staticClass: "info_smart" }, [
+                  _vm._v("ingredients:"),
+                ]),
+                _vm._v(" " + _vm._s(post.ingredients)),
+              ]),
+              _vm._v(" "),
+              _c("ul", { staticClass: "p-0" }, [
+                _c("strong", { staticClass: "info_smart" }, [
+                  _vm._v("Description:"),
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(post.content) +
+                      "\n                "
+                  ),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _c("strong", { staticClass: "info_smart" }, [
+                  _vm._v("Time Cooking:"),
+                ]),
+                _vm._v(" " + _vm._s(post.time_cooking)),
+              ]),
+            ]
+          )
+        }),
+        0
+      ),
+    ]),
   ])
 }
 var staticRenderFns = []

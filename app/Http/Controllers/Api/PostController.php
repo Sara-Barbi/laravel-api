@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Api;
 use App\Post;
+use App\Category;
+use App\Tag;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -12,6 +14,8 @@ class PostController extends Controller
    //  COME RICHIAMO TUTTI I POST
    
    $posts= Post::all();
+   $categories= Category::all();
+   $tags= Tag::all();
    return response()->json($posts);  //ritorna in formato json
 }
    //------------ESEMPIO BASE
