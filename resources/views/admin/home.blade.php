@@ -16,7 +16,14 @@
                     {{ __('You are logged in!') }}     <!--__serve per la lingua-->
                     {{ Auth::user()->name }}          <!--prendere un dato dall'user-->
                 </div>
-                <a class="text-center" href="{{route("admin.posts.index")}}"><button type="button" >Esplora!</button></a>
+                <a class="text-center mb-5" href="{{route("admin.posts.index")}}"><button type="button" >Esplora!</button></a>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col">
+                            <img class="w-100" src="https://www.arcagrandiimpianti.com/wp/wp-content/uploads/2021/02/Ratatouille-2-1024x576.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

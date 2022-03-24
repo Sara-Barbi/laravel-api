@@ -14,15 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
 
 //--------------------per api-------------
 
 Route::get('/posts',"Api\PostController@index");                                 //prefisso con api lo richiamo con api/posts
 
-
+Route::namespace('Api')->name('api.')->group(function(){
+     Route::get("/posts","PostController@index")->name('posts');
+});
 //---------------------per richiesta spefifica categoria 
 
 //Route::get('/posts/category/{category}',"Api\PostController@index");        //NON E' MOLTO CORRETTO...prefisso con api lo richiamo con api/posts/category/2

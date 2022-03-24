@@ -9,12 +9,10 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
    public function index(){
-
    //  COME RICHIAMO TUTTI I POST
    
    $posts= Post::all();
-   return response()->json($posts);
-
+   return response()->json($posts);  //ritorna in formato json
 }
    //------------ESEMPIO BASE
    //     return response()->json([

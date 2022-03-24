@@ -117,7 +117,7 @@ class PostController extends Controller
                 "price"=>"required|numeric",
                 "content"=>"required",
                 "time_cooking"=>"required",
-                //"category_id"=>'nullable|exist:categories,id'
+                //"category_id"=>'nullable|exist:categories,id'    //se abbiamo utilizzato un metodo
 
             ]);
             //prendo i dati dalla form

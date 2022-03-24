@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('front');
 });
 
 Auth::routes();
@@ -26,5 +26,7 @@ Route::middleware('auth')   //solo se utente è loggato
 ->group(function () {
     Route::get('/', 'HomeController@index')->name('home');  // get( /, PostController@index)->name('index');
     Route::resource('/posts','PostController');             // get( /altro, PostController@index)->name('altro');
+    Route::resource('/categories','CategoryController');             
+    Route::resource('/tags','TagController');             
 });
 
