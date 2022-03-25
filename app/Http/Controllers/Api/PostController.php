@@ -11,17 +11,15 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
    public function index(){
-   //  COME RICHIAMO TUTTI I POST
-   
-  // $posts= Post::all();                      //per richiamare tutti i post, se ci sono relazioni NON VA BENE
-  // return response()->json($posts) ;         //ritorna in formato json
-
-  //RICHIAMO POST CON RELAZIONI
+      //RICHIAMO POST CON RELAZIONI
    $posts = Post::with('category', 'tags')->get();
    return response()->json($posts);
-   
-  
 }
+
+//--------------------------------IN INDEX ----------------------
+   // -------------------COME RICHIAMO TUTTI I POST
+  // $posts= Post::all();                      //per richiamare tutti i post, se ci sono relazioni NON VA BENE
+  // return response()->json($posts) ;         //ritorna in formato json
    //------------ESEMPIO BASE
    //     return response()->json([
    //        'name'=> 'Simone',
@@ -45,5 +43,12 @@ class PostController extends Controller
    //     return response()->json($posts);
    //   }    
    //}
+
+   public function show($slug){
+      //RICHIAMO POST che hanno uno slug (in teoria tutti) con all'interno category e tags,(come in index),prendi il primo (quello cliccato)
+   
+      $posts = Post::where("slug",$slug)->with(['category', 'tags'])->first();
+   return response()->json($post);                                            //dai come risultato un formato json
+}
    
 }
