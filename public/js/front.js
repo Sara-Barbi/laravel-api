@@ -2773,18 +2773,7 @@ var render = function () {
               ]),
               _vm._v(" " + _vm._s(post.time_cooking)),
             ]),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              {
-                attrs: {
-                  to: { name: "single-post", params: { slug: post.slug } },
-                },
-              },
-              [_vm._v("Visualizza la Ricetta")]
-            ),
-          ],
-          1
+          ]
         )
       }),
       0
