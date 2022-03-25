@@ -13,10 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('front');
-});
-
 Auth::routes();
 
 Route::middleware('auth')   //solo se utente è loggato
@@ -30,3 +26,7 @@ Route::middleware('auth')   //solo se utente è loggato
     Route::resource('/tags','TagController');             
 });
 
+//indirizzare sempre sul front
+Route::get('{any?}', function () {    //any=qualsiasi cosa  ?= potrebbe anche non esserci nulla (/)
+    return view('front');
+})->where("any",".+");
