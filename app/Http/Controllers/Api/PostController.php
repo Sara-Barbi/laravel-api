@@ -13,10 +13,14 @@ class PostController extends Controller
    public function index(){
    //  COME RICHIAMO TUTTI I POST
    
-   $posts= Post::all();
-   $categories= Category::all();
-   $tags= Tag::all();
-   return response()->json($posts);  //ritorna in formato json
+  // $posts= Post::all();                      //per richiamare tutti i post, se ci sono relazioni NON VA BENE
+  // return response()->json($posts) ;         //ritorna in formato json
+
+  //RICHIAMO POST CON RELAZIONI
+   $posts = Post::with('category', 'tags')->get();
+   return response()->json($posts);
+   
+  
 }
    //------------ESEMPIO BASE
    //     return response()->json([

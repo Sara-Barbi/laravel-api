@@ -1,22 +1,18 @@
 <template>
     <div>
-    <div class="container">
-        <div class="row justify-content-around flex-wrap">
-            <div class="my_height col-3 text-center m-3" v-for="(post,index) in posts" :key="index">
+    <div class="containerr">
+        <div class="row justify-content-around flex-wrap p-relative">
+            <div class="my_height col-3 m-3 text-center " v-for="(post,index) in posts" :key="index">
                 <h1 class="mt-5 mb-4">{{post.title}}</h1>
-                <div class="mb-4" v-if="post.category_id==1">Antipasti</div>
-                <div class="mb-4" v-if="post.category_id==2">Primi</div>
-                <div class="mb-4" v-if="post.category_id==3">Secondi Piatti di Carne</div>
-                <div class="mb-4" v-if="post.category_id==4">Secondi Piatti di Pesce</div>
-                <div class="mb-4" v-if="post.category_id==5">Dolci al Cucchiaio</div>
-                <div class="mb-4" v-if="post.category_id==6">Torte</div>
-                <div class="mb-4" v-if="post.category_id==7">Piatti Orientali</div>
+                <div>{{post.category.name}}</div>
                 <div class="col-12 mt-5 mb-5">
                     <img class="w-100 product_img" :src="post.img" alt="">
                 </div>
-                <div class="mb-4 tags">
-                 
-                </div>
+                <span class="mb-4 tags">
+                    <span class="tag" v-for="(tag,index) in post.tags" :key="index">
+                        {{tag.name}}
+                    </span>
+                </span>
                 <p><strong class="info_smart">ingredients:</strong> {{post.ingredients}}</p>
                 <ul class="p-0">
                     <strong class="info_smart">Description:</strong> 
@@ -24,7 +20,7 @@
                         {{post.content}}
                     </li>
                 </ul>
-                <p><strong class="info_smart">Time Cooking:</strong> {{post.time_cooking}}</p>
+                <p><strong class="info_smart">Time Cooking:</strong> {{post.time_cooking}}</p>    
             </div>
         </div>
     </div>
