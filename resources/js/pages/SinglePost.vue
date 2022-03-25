@@ -30,11 +30,11 @@ export default {
     name:"Main",
     data(){
         return{
-            posts:{}
+            posts:{}               //deve ritornare un oggetto
         }
     } ,
     created(){
-        axios
+        axios                     //la chiamata axios avviene per verificare lo slug del singolo elemento
         .get("/api/posts")
         .then((apirisp)=>{
             this.post= apirisp.data;
